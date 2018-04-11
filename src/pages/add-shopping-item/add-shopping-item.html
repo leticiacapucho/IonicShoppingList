@@ -1,0 +1,65 @@
+<!--
+  Generated template for the AddShoppingItemPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <!-- color="primary" - define a cor padrão, azul. -->
+    <ion-title>Add Item</ion-title>
+    <!-- Add Item é o título -->
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+<!-- 
+      O que tem dentro do placeholder fica como linha d'agua na aplicação...
+    e quando é digitado algo, aquela linha d'agua some.
+
+      Esse type="number", serve para subir e descer valor, deixando ele no 
+    negativo ou positivo.
+
+========================================================================================
+
+      Dentro dessa tag do ion-input, aqui: [(ngModel)]="item.name" 
+    é pego cada parte do item, primeiro, nome, depois quantidade...
+    
+-->
+  <ion-item>
+    <ion-label>Name</ion-label> 
+    <ion-input [(ngModel)]="item.name" placeholder="iPad Pro"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Quantity</ion-label>
+    <ion-input [(ngModel)]="item.quantity" type="number" placeholder="1"></ion-input>
+  </ion-item>
+   
+  <ion-item>
+      <ion-label>Price</ion-label>
+      <ion-input [(ngModel)]="item.price" type="number" placeholder="700"></ion-input>
+    </ion-item>
+    
+  <!-- Quando eu quero vincular ao item e usar o adjacente na tabulação
+          {{item | json}}
+
+  =========================================================================================
+
+      <button ion-button>Add</button> // Aqui é criado um botão comum, e no
+    ios ele fica na ao lado esquerdo.
+   
+  -->
+
+   <button ion-button block clear (click)="addItem(item)">Add</button> <!-- Quando adicionamos o  block clear, é retirado
+  a cor do botão e centralizado o botão de Add.
+
+    Foi criado esse evento click para adicionar o botão que vai ser enviado para
+  adicionar item e passá-lo através do item :
+      
+      (click)="addItem(item)""
+
+-->
+</ion-content>
