@@ -37,11 +37,36 @@ export class ShoppingListService {
     */
 
     getShoppingList(){
+    // pega a lista do shopping dos items 
         return this.shoppingListRef;
     }
 
     addItem(item: Item) {
-    // O item dentro do parenteses é para adicionar no banco de dados.
+    /*
+            
+        O item dentro do parenteses é para adicionar no banco de dados, ou seja,
+      permite que elas possam serem adicionadas
+
+         */
+
         return this.shoppingListRef.push(item);
     }    
+
+    editItem(item: Item){
+        return this.shoppingListRef.update(item.key, item);  /* 
+            
+            nos permite atualizar o item com base na chave de itens, ou seja,
+        atualizar o item que selecionamos com base no caso
+        
+        */
+
+    }
+
+    removeItem(item: Item){
+        return this.shoppingListRef.remove(item.key); /*
+
+            remove o item aqui, removendo-o com base na chave   
+
+        */
+    }
 }

@@ -10,6 +10,7 @@ import { MyApp } from './app.component';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 
 import { ShoppingListService } from '../services/shopping-list/shopping-list.service';
+import { ToastService } from '../services/toast/toast.service';
 
 // import { HomePage } from '../pages/home/home';
 
@@ -33,7 +34,9 @@ import { ShoppingListService } from '../services/shopping-list/shopping-list.ser
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ShoppingListService
+    ShoppingListService,
+    ToastService,
+
   ],
 })
 export class AppModule {}
