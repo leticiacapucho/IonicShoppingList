@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar color="primary"> <!-- Esse color="primary" define a cor da barra superior-->
+    <ion-title>
+      Shopping List
+    </ion-title>
+   
+    <!-- Esse end define que o +, fica ao lado direito na barra superior -->
+    <ion-buttons end> 
+      <!--
+            Esse ion-button é pra dizer que o + que fica no lado direito da barra superior,
+          é um botão.
+================================================================================================================================
+
+            O navPush="AddShoppingItemPage", é para que quando clicado no botão +, ele abre uma nova página e o
+          AddShoppingItemPage, fica como título nessa nova página aberta.
+        -->
+      <button navPush="AddShoppingItemPage" ion-button>
+        <ion-icon name="add"></ion-icon> <!-- Nessa tag, o name="add" - fica no lado direito da barra superior um + -->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header> <!-- mostra a quantidade de items -->
+      Items
+    </ion-list-header>
+  <ion-item *ngFor="let item of shoppingList$ | async" detail-push navPush="EditShoppingItemPage" [navParams]="{item: item}"> <!-- O que está dentro das aspas, é para simplificar
+       os items recebidos...
+     
+       O details-push é pra mostrar tem uma informação, que você pode exibir mais, pra ver informação do lado.
+        Exemplo:
+        
+            iPad Pro   >
+
+              após clicado, ele abre a página de=o iPad Pro. (Obs: ele abre pois foi inserido dentro do navPush, o EditShoppingItemPage)
+
+            
+
+            [navParams] - são paramentros, que podemos enviar através de uma nova página e nos permite identificar este item.
+
+      O item principal é colocado dentro de um objeto javascript:
+      
+            {item: item}
+            
+          no qual permite referenciá-lo um pouco mais fácil dentro da próxima página. No caso, tá sendo dito então que é um objeto com chave de item e o valor
+          que vai ser aquele item que selecionamos
+
+ ====================================================================================================================================================================         
+          -->
+      {{item.name}} <!-- Aqui é porque salvamos, aí exibe os dados cadastrados -->
+
+    </ion-item>
+    
+  </ion-list>
+
+<!--
+
+  The world is your oyster.
+  <p>
+    If you get lost, the
+     <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+  </p>
+
+-->
+</ion-content>
