@@ -1,14 +1,8 @@
-<!--
-  Generated template for the AddShoppingItemPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar color="primary">
     <!-- color="primary" - define a cor padrão, azul. -->
-    <ion-title>Add Item</ion-title>
+    <ion-title>Cadastro de Produtos</ion-title>
     <!-- Add Item é o título -->
   </ion-navbar>
 
@@ -29,18 +23,28 @@
     
 -->
   <ion-item>
-    <ion-label>Name</ion-label> 
-    <ion-input [(ngModel)]="item.name" placeholder="iPad Pro"></ion-input>
+    <ion-label>Nome: </ion-label> 
+    <ion-input [(ngModel)]="item.nome"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label>Quantity</ion-label>
-    <ion-input [(ngModel)]="item.quantity" type="number" placeholder="1"></ion-input>
+    <ion-label>Descrição: </ion-label>
+    <ion-input [(ngModel)]="item.descricao"></ion-input>
   </ion-item>
    
   <ion-item>
-      <ion-label>Price</ion-label>
-      <ion-input [(ngModel)]="item.price" type="number" placeholder="700"></ion-input>
+      <ion-label>Preço: </ion-label>
+      <ion-input [(ngModel)]="item.preco" type="number"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Percentual: </ion-label>
+      <ion-input [(ngModel)]="item.percentual" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Saldo: </ion-label>
+      <ion-input [(ngModel)]="item.saldo" type="number"></ion-input>
     </ion-item>
     
   <!-- Quando eu quero vincular ao item e usar o adjacente na tabulação
@@ -54,7 +58,7 @@
 ================================================================================================================================   
   -->
 
-   <button ion-button block clear (click)="addItem(item)">Add</button> <!-- Quando adicionamos o  block clear, é retirado
+   <button ion-button block clear (click)="addItem(item)">Salvar Produto</button> <!-- Quando adicionamos o  block clear, é retirado
   a cor do botão e centralizado o botão de Add.
 
     Foi criado esse evento click para adicionar o botão que vai ser enviado para

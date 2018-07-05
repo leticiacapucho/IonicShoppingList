@@ -1,0 +1,50 @@
+<!-- 
+  <ion-header>
+
+  <ion-navbar>
+    <ion-title>login</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+<!-- para que a pagina fique parando e não rolando uso scroll="false"-->
+<ion-content scroll="false">
+  <div class="splash-bg"></div>
+  <div class="splash-info">
+    <div class="splash-intro">
+      Sistema Mobile
+    </div>
+  </div>
+  <div padding>
+
+  <!-- informações relativas ao user -->
+    <!-- <ion-content padding> -->
+  <!-- determina template de visualização para o user -->
+
+    <form (ngSubmit)="efetuaLogin()">
+      <!-- quando o form for submetido, ele efetuar login -->
+      <ion-item>
+        <ion-label stacked>Email:</ion-label>
+        <!-- Faço um bind dos ion-input para a propriedade.
+            uso o ngModel para fazer um data bind da view para
+            o modelo, e do modelo para a view.
+         -->
+        <ion-input [(ngModel)]="email" name="email" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Senha:</ion-label>
+        <ion-input [(ngModel)]="senha" name="senha" type="password"></ion-input>
+      </ion-item>
+
+      <!-- o block é usado para que o botão ocupe todo o espaço
+     relativo a ele-->
+      <button ion-button block type="submit" class="entrar">Entrar</button>
+    </form>
+
+    <form (ngSubmit)="inscreverUser()">
+        <button ion-button block type="submit" class="cadastrar">Inscrever-se</button>
+        
+    </form>
+</div>
+</ion-content>

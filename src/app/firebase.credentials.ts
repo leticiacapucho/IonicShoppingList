@@ -2,10 +2,10 @@
     Dentro do parenteses tem esse objeto javaScript
     */
 export const FIREBASE_CONFIG = {
-    apiKey: "AIzaSyCIsAjaAf-Vcv4Es-TN32Awd6kqaqWkGX8", // Mostra a nossa chave
-    authDomain: "ionicshoppinglist-d25d4.firebaseapp.com", // o nosso banco de dados principal CRL
-    databaseURL: "https://ionicshoppinglist-d25d4.firebaseio.com",
-    projectId: "ionicshoppinglist-d25d4",
-    storageBucket: "ionicshoppinglist-d25d4.appspot.com",
-    messagingSenderId: "964741916016"
+    apiKey: "AIzaSyDH8SA4yixIF6etzttrZzs27g_RMacX9KA",
+    authDomain: "sistemamobile-c617d.firebaseapp.com",
+    databaseURL: "https://sistemamobile-c617d.firebaseio.com",
+    projectId: "sistemamobile-c617d",
+    storageBucket: "sistemamobile-c617d.appspot.com",
+    messagingSenderId: "720957655681"
 }

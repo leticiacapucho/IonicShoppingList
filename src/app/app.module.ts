@@ -9,15 +9,25 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { MyApp } from './app.component';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 
-import { ShoppingListService } from '../services/shopping-list/shopping-list.service';
+import { SistemaListService } from '../services/sistema-list/sistema-list.service';
 import { ToastService } from '../services/toast/toast.service';
-
-// import { HomePage } from '../pages/home/home';
+import { HomePage } from '../pages/home/home';
+import { EntrarPage } from '../pages/autenticacao/entrar/entrar';
+import { EditUserPage } from '../pages/autenticacao/edit-usuario/edit-usuario';
+import { CadastrarUserPage } from '../pages/autenticacao/cadastrar-usuario/cadastrar-usuario';
+import { AddProdutoPage } from '../pages/produto/add-produto/add-produto';
+import { EditProdutoPage } from '../pages/produto/edit-produto/edit-produto';
 
 @NgModule({
   declarations: [
     MyApp,
-  //HomePage
+    HomePage,
+    EntrarPage,
+    CadastrarUserPage,
+    EditUserPage,
+    AddProdutoPage,
+    EditProdutoPage
+    
   ],
   imports: [
     BrowserModule,
@@ -28,15 +38,19 @@ import { ToastService } from '../services/toast/toast.service';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-  //HomePage
+    HomePage,
+    EntrarPage,
+    CadastrarUserPage,
+    EditUserPage,
+    AddProdutoPage,
+    EditProdutoPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ShoppingListService,
+    SistemaListService,
     ToastService,
-
   ],
 })
 export class AppModule {}

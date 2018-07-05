@@ -1,5 +1,5 @@
 {
-  "name": "IonicShoppingList",
+  "name": "Sistema",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
@@ -30,6 +30,7 @@
     "angularfire2": "^5.0.0-rc.6",
     "cordova-ios": "4.5.4",
     "cordova-plugin-device": "^2.0.1",
+    "cordova-plugin-facebook4": "^2.2.0",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^1.2.0",
     "cordova-plugin-splashscreen": "^5.0.2",

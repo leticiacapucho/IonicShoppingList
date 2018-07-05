@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { EntrarPage } from '../pages/autenticacao/entrar/entrar';
+import { AddProdutoPage } from '../pages/produto/add-produto/add-produto';
+import { HomePage } from '../pages/home/home';
 
 //import { HomePage } from '../pages/home/home';
 @Component({
@@ -9,7 +12,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 })
 export class MyApp {
   //rootPage:any = HomePage;
-  rootPage: string = 'HomePage';
+  rootPage:any = EntrarPage;
+
+  public pages = [
+    { title: 'Home', componente: HomePage },
+    { title: 'Cadastrar Produto', componente: AddProdutoPage},
+  ];
 
   constructor(
     platform: Platform,
@@ -23,5 +31,6 @@ export class MyApp {
       splashScreen.hide();
     });
   }
+
 }
 

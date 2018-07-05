@@ -1,20 +1,22 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ShoppingListService } from '../../services/shopping-list/shopping-list.service';
-import { Item } from '../../models/item/item.model';
-import { ToastService } from '../../services/toast/toast.service';
-
+import { Produto } from '../../../interfaces/produto';
+import { SistemaListService } from '../../../services/sistema-list/sistema-list.service';
+import { ToastService } from '../../../services/toast/toast.service';
 
 @IonicPage()
 @Component({
-  selector: 'page-add-shopping-item',
-  templateUrl: 'add-shopping-item.html',
+  selector: 'page-add-produto',
+  templateUrl: 'add-produto.html',
 })
-export class AddShoppingItemPage {
-  item: Item = { // Esse Item, foi importado daqui no model
-    name: '', //está se comportando como vazio o nome
-    quantity: undefined, // está como indefinido
-    price: undefined,
+export class AddProdutoPage {
+ 
+  item: Produto = { // Esse Item, foi importado daqui no model
+    nome: '', //está se comportando como vazio o nome
+    descricao: '',
+    preco: undefined,
+    percentual: undefined,
+    saldo: undefined
   };
 
   constructor(
@@ -24,15 +26,15 @@ export class AddShoppingItemPage {
           Foi colocado no construtor o shopping para que as listas
         sejam importadas para a nossa página
     */
-    private shopping: ShoppingListService,
+    private sistema: SistemaListService,
     private toast: ToastService,
   ) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AddShoppingItemPage');
+    console.log('ionViewDidLoad AddProdutoPage');
   }
 
-  addItem(item: Item) {
+  addItem(item: Produto) {
     /*
         Aqui quer dizer para adicionar o item em shopping:
   
@@ -48,8 +50,8 @@ export class AddShoppingItemPage {
         Para adicionar um novo item, clicar no +, na barra de menu superior, lado direito.
         
     */
-    this.shopping.addItem(item).then(ref => {
-      this.toast.show(`${item.name} adicionado!`); /* Ao clicar em add na aba que abriu no editor,
+    this.sistema.addItem(item).then(ref => {
+      this.toast.show(`${item.nome} adicionado!`); /* Ao clicar em add na aba que abriu no editor,
       é carregado ao menu inicial, que é a homePage, onde tem todos os items cadastrados. Quando
       cair na homePage, sobe uma mensagem informando de que foi adicionado o item.
 

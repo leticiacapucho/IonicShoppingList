@@ -1,0 +1,54 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+      <!-- color="primary" - define a cor padrão, azul. -->
+      <ion-title>Criar Conta</ion-title>
+      <!-- Add Item é o título -->
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-item>
+        <ion-label>Nome:</ion-label>
+        <ion-input [(ngModel)]="usuario.nome" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Endereço:</ion-label>
+        <ion-input [(ngModel)]="usuario.endereco" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Bairro:</ion-label>
+        <ion-input [(ngModel)]="usuario.bairro" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>CEP:</ion-label>
+        <ion-input [(ngModel)]="usuario.cep" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Cidade:</ion-label>
+        <ion-input [(ngModel)]="usuario.cidade" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>UF:</ion-label>
+        <ion-input [(ngModel)]="usuario.uf" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Email:</ion-label>
+        <ion-input [(ngModel)]="usuario.email" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Senha:</ion-label>
+        <ion-input [(ngModel)]="usuario.senha" type="password"></ion-input>
+    </ion-item>
+
+   <button ion-button block clear (click)="addUser(usuario)">Salvar Dados</button> 
+
+</ion-content>

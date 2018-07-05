@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, IonicPage } from 'ionic-angular';
 
 
-import { ShoppingListService } from '../../services/shopping-list/shopping-list.service';
+import { SistemaListService } from '../../services/sistema-list/sistema-list.service';
 import { Observable } from 'rxjs/Observable';
-import { Item } from '../../models/item/item.model';
+import { Produto } from '../../interfaces/produto';
 
 @IonicPage()
 @Component({
@@ -13,7 +13,7 @@ import { Item } from '../../models/item/item.model';
 })
 export class HomePage {
 
-  shoppingList$: Observable<Item[]>; /* aqui eu criei shoppingList que representa um observable, onde,
+  sistemaList$ : Observable<Produto[]>; /* aqui eu criei shoppingList que representa um observable, onde,
   irá observar a lista de items, por isso o array de item:
   
       <Item[]>.
@@ -21,10 +21,10 @@ export class HomePage {
     */
 
   // privei o shopping para ser referencia ao ShoppingListService  
-  constructor(public navCtrl: NavController, private shopping: ShoppingListService) {
+  constructor(public navCtrl: NavController, private sistema: SistemaListService) {
     // importando items do nosso item model
-    this.shoppingList$ = this.shopping
-      .getShoppingList() // retorna a lista de items do shopping | DB List
+    this.sistemaList$ = this.sistema
+      .getProdutoList() // retorna a lista de items do shopping | DB List
       .snapshotChanges() // permite pegar ambos, a chave e o valor | Chave e valor
 
       //  .valueChanges() // pega os valores mudados

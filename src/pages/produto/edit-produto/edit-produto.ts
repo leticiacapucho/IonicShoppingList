@@ -1,23 +1,22 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Toast } from 'ionic-angular';
-import { Item } from '../../models/item/item.model';
-
-import { ShoppingListService } from '../../services/shopping-list/shopping-list.service';
-import { ToastService } from '../../services/toast/toast.service';
+import { Produto } from '../../../interfaces/produto';
+import { SistemaListService } from '../../../services/sistema-list/sistema-list.service';
+import { ToastService } from '../../../services/toast/toast.service';
 
 @IonicPage()
 @Component({
-  selector: 'page-edit-shopping-item',
-  templateUrl: 'edit-shopping-item.html',
+  selector: 'page-edit-produto',
+  templateUrl: 'edit-produto.html',
 })
-export class EditShoppingItemPage {
+export class EditProdutoPage {
 
-  item: Item;
+  item: Produto;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private shopping: ShoppingListService,
+    private sistema: SistemaListService,
     private toast: ToastService) {
   }
   /*
@@ -51,7 +50,7 @@ export class EditShoppingItemPage {
         e criar a função: editItem(), depois passar como parametro item: Item
    */
 
-  saveItem(item: Item) { /* Colocamos dentro do parenteses para dizer que:
+  saveItem(item: Produto) { /* Colocamos dentro do parenteses para dizer que:
        vamos fazer o save item pegar um item do tipo item.
 
 ================================================================================================================================
@@ -59,8 +58,8 @@ export class EditShoppingItemPage {
        
   */
 
-    this.shopping.editItem(item).then(() => {
-      this.toast.show(`${item.name} salvo!`); /* Ao clicar em salvar na aba que abriu no editor,
+    this.sistema.editItem(item).then(() => {
+      this.toast.show(`${item.nome} salvo!`); /* Ao clicar em salvar na aba que abriu no editor,
           é carregado ao menu inicial, que é a homePage, onde tem todos os items cadastrados. Quando
           cair na homePage, sobe uma mensagem informando de que foi salvo o item, por exemplo:
           
@@ -84,9 +83,9 @@ export class EditShoppingItemPage {
   
   */
 
-  removeItem(item: Item){
-    this.shopping.removeItem(item).then(()=> {
-        this.toast.show(`${item.name} deletado!`);
+  removeItem(item: Produto){
+    this.sistema.removeItem(item).then(()=> {
+        this.toast.show(`${item.nome} deletado!`);
         this.navCtrl.setRoot('HomePage');
       })
 
